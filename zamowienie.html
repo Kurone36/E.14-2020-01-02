@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Fabryka żelków</title>
+        <link rel="stylesheet" type="text/css" href="styl9.css">
+        <script>
+            function skrypt() {
+                var shape = document.getElementById("ksztalt").value;
+                var wynik = document.getElementById("wynik");
+                var przycisk = document.getElementById("kolor");
+                var tekst = "Zamówiłeś żelka: ";
+                var R = document.getElementById("r").value;
+                var G = document.getElementById("g").value;
+                var B = document.getElementById("b").value;
+                
+                
+                if (shape==1){
+                    tekst += "miś";
+                }else if (shape==2) {
+                    tekst += "żabka";
+                }else if (shape==3) {
+                    tekst += "serce";
+                }else {
+                    tekst += "coś innego";
+                }
+                wynik.innerHTML = tekst;
+                przycisk.style.backgroundColor = "rgb(" + R + "," + G + "," + B +")";
+            }
+                
+            
+        </script>
+    </head>
+    <body>
+        <section id="blok_P" class="blok">
+            <a href="index.html"><img alt="logo fabryki" src="logo.png"></a>
+        </section>
+        <section id="blok_D" class="blok">
+            <a id="a" href="zamowienie.html">Zamówienie</a><br>
+            <img alt="nasze wyroby" src="logo2.jpg">
+        </section>
+        <section id="baner">
+            <h2>Zamów nasz produkt</h2>
+        </section>
+        <section id="g_Lewy" class="glowny">
+            <h1>Oferta</h1>
+            <table>
+                <tr>
+                    <td>Kształty</td>
+                    <td>Kolory</td>
+                </tr>
+                <tr>
+                    <td><ol>
+                            <li>miś</li>
+                            <li>żabka</li>
+                            <li>serce</li>
+                        </ol></td>
+                    <td><ol>
+                            <li>czerwony</li>
+                            <li>niebieski</li>
+                            <li>żółty</li>
+                            <li>inny</li>
+                        </ol></td>
+                </tr>
+            </table>
+        </section>
+        <section id="g_Prawy" class="glowny">
+            <label>Podaj numer kształtu: </label><br>
+            <input type="number" id="ksztalt"><br>
+            <label>Skomponuj swój kolor, podaj RGB:  </label><br>
+            R: <input type="number" id="r">
+            G: <input type="number" id="g">
+            B: <input type="number" id="b"><br>
+            <input type="button" onclick="skrypt()" value="Zamów">
+            <p id="wynik">Wybrany kształt</p>
+            <input type="button" value="Wybrany kolor" id="kolor">
+        </section>
+        <section id="stopka">
+            <span>Autor strony: <i>01234567890</i></span>
+        </section>
+    </body>
+</html>
